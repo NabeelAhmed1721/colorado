@@ -1,0 +1,46 @@
+.container {
+  min-width: 250px;
+  padding-bottom: 24px;
+}
+
+.logo-container {
+  user-select: none;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #9dabf5;
+  margin-right: 12px;
+}
+
+.link-container {
+  margin-top: 0px;
+  font-size: 16px;
+}
+
+.link {
+  padding: 12px 25px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s ease-in;
+  align-items: center;
+}
+
+.link:hover {
+  background-color: rgba(157, 171, 245, 0.2);
+}
+
+.link-arrow {
+  transition: 0.1s;
+}
+
+.link:hover .link-arrow {
+  transform: translate(2px);
+}
