@@ -5,4 +5,8 @@ body {
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 250px;
+  max-height: 500px;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }

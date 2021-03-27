@@ -18,12 +18,22 @@
   margin-right: 12px;
 }
 
-.link-container {
-  margin-top: 0px;
-  font-size: 16px;
+.menu-container {
+  width: 500px;
+  display: flex;
+  transform: translate(-250px);
+  transition: 0.2s ease-in;
 }
 
-.link {
+.menu-active {
+  transform: translate(0);
+}
+
+.settings-menu {
+  width: 250px;
+}
+
+.back-button {
   padding: 12px 25px;
   display: flex;
   justify-content: space-between;
@@ -33,14 +43,14 @@
   align-items: center;
 }
 
-.link:hover {
+.back-button:hover {
   background-color: rgba(157, 171, 245, 0.2);
 }
 
-.link-arrow {
+.back-button-arrow {
   transition: 0.1s;
 }
 
-.link:hover .link-arrow {
-  transform: translate(2px);
+.back-button:hover .back-button-arrow {
+  transform: translate(-2px);
 }

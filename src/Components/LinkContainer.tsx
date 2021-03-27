@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'react-feather';
+import './LinkContainer.css';
 
 type LinkProps = {
   title: string;
@@ -10,19 +11,11 @@ type LinkContainerProps = {
   onMenuSelect: (title: LinkProps['title']) => void;
 };
 
-const Links: Omit<LinkProps, 'onClick'>[] = [
-  {
-    title: 'My Themes',
-  },
-  {
-    title: 'Choose Themes',
-  },
-  {
-    title: 'Browse Recommendations',
-  },
-  {
-    title: 'Color Blind Themes',
-  },
+const Links: LinkProps['title'][] = [
+  'My Themes',
+  'Choose Themes',
+  'Recommendations',
+  'Color Blind Themes',
 ];
 
 const Link = ({ title, onClick }: LinkProps) => (
@@ -34,7 +27,7 @@ const Link = ({ title, onClick }: LinkProps) => (
 
 const LinkContainer = ({ onMenuSelect }: LinkContainerProps) => (
   <div className="link-container">
-    {Links.map(({ title }) => (
+    {Links.map((title) => (
       <Link title={title} key={title} onClick={() => onMenuSelect(title)} />
     ))}
   </div>

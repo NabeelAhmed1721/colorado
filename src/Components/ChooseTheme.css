@@ -1,0 +1,36 @@
+.theme {
+  cursor: pointer;
+  padding: 10px 25px;
+}
+
+.theme:hover {
+  background-color: rgba(157, 171, 245, 0.2);
+}
+
+.theme h2 {
+  margin: 0 0 12px 0;
+  user-select: none;
+}
+
+.theme-color-list {
+  display: flex;
+}
+
+.theme-color {
+  width: 16px;
+  height: 16px;
+  background-color: midnightblue;
+  border-radius: 50%;
+}
+
+.theme-color:first-child {
+  margin: 0 6px 0 0;
+}
+
+.theme-color:last-child {
+  margin: 0 0 0 6px;
+}
+
+.theme-color {
+  margin: 0 6px;
+}
