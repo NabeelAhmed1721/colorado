@@ -52,14 +52,22 @@ export const Themes: Pick<ThemeProps, 'title' | 'colors'>[] = [
 ];
 
 const ChooseTheme = () => {
-  const [selectedTheme, setSelectedTheme] = useState<string | null>('');
+  const [selectedTheme, setSelectedTheme] = useState<string | null | undefined>(
+    ''
+  );
 
   useEffect(() => {
-    setSelectedTheme(localStorage.getItem('selectedTheme'));
+    // setSelectedTheme(localStorage.getItem('selectedTheme'));
+    chrome.storage.local.get('selectedTheme', (theme) =>
+      setSelectedTheme(theme.selectedTheme)
+    );
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('selectedTheme', selectedTheme || '');
+    chrome.storage.local.set(
+      selectedTheme ? { selectedTheme } : { selectedTheme: '' }
+    );
+    // localStorage.setItem('selectedTheme', selectedTheme || '');
   }, [selectedTheme]);
 
   return (
