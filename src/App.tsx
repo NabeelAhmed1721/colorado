@@ -21,8 +21,6 @@ type SettingsProviderProps = {
 
 const SettingsProvider = ({ title }: SettingsProviderProps) => {
   switch (title) {
-    case 'My Themes':
-      break;
     case 'Choose Themes':
       return <ChooseTheme />;
     case 'Recommendations':

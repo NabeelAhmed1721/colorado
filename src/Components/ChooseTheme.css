@@ -10,6 +10,8 @@
 .theme h2 {
   margin: 0 0 12px 0;
   user-select: none;
+  display: flex;
+  align-items: center;
 }
 
 .theme-color-list {

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ChooseTheme.css';
+import { Check } from 'react-feather';
 
 type ThemeColorProps = {
   color: string;
@@ -16,11 +17,16 @@ type ThemeProps = {
     ThemeColorProps['color'],
     ThemeColorProps['color']
   ];
+  active?: boolean;
+  onClick: React.MouseEventHandler<HTMLDivElement>;
 };
 
-const Theme = ({ title, colors }: ThemeProps) => (
-  <div className="theme">
-    <h2>{title}</h2>
+const Theme = ({ title, colors, active, onClick }: ThemeProps) => (
+  <div className="theme" onClick={onClick}>
+    <h2>
+      {title}
+      {active ? <Check style={{ marginLeft: 10 }} /> : ''}
+    </h2>
     <div className="theme-color-list">
       {colors.map((userColors) => (
         <ThemeColor color={userColors} key={userColors} />
@@ -29,10 +35,50 @@ const Theme = ({ title, colors }: ThemeProps) => (
   </div>
 );
 
-const ChooseTheme = () => (
-  <div style={{ marginTop: 10 }}>
-    <Theme title="Dark Mode" colors={['black', 'grey', 'silver']} />
-  </div>
-);
+Theme.defaultProps = {
+  active: false,
+};
+
+export const Themes: Pick<ThemeProps, 'title' | 'colors'>[] = [
+  // add more themes here if you want
+  {
+    title: 'Dark Theme',
+    colors: ['black', 'grey', 'silver'],
+  },
+  {
+    title: 'Night Crawler',
+    colors: ['red', 'orange', 'silver'],
+  },
+];
+
+const ChooseTheme = () => {
+  const [selectedTheme, setSelectedTheme] = useState<string | null>('');
+
+  useEffect(() => {
+    setSelectedTheme(localStorage.getItem('selectedTheme'));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('selectedTheme', selectedTheme || '');
+  }, [selectedTheme]);
+
+  return (
+    <div style={{ marginTop: 10 }}>
+      {Themes.map(({ title, colors }) => (
+        <Theme
+          title={title}
+          colors={colors}
+          key={title}
+          active={selectedTheme === title}
+          onClick={() =>
+            selectedTheme === title
+              ? setSelectedTheme('')
+              : setSelectedTheme(title)
+          }
+        />
+      ))}
+    </div>
+  );
+};
 
 export default ChooseTheme;
