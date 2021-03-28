@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft } from 'react-feather';
 import LinkContainer from './Components/LinkContainer';
 import ChooseTheme from './Components/ChooseTheme';
+import ColorBlind from './Components/ColorBlind';
 import './App.css';
 
 type BackButtonProps = {
@@ -26,7 +27,7 @@ const SettingsProvider = ({ title }: SettingsProviderProps) => {
     case 'Recommendations':
       break;
     case 'Color Blind Themes':
-      break;
+      return <ColorBlind />;
     default:
       return null;
   }
