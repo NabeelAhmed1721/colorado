@@ -14,7 +14,7 @@ type LinkContainerProps = {
 const Links: LinkProps['title'][] = [
   'Choose Themes',
   'Customize',
-  'Color Blind Themes',
+  'Accessibility Options',
 ];
 
 const Link = ({ title, onClick }: LinkProps) => (

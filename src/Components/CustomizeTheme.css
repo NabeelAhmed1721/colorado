@@ -1,0 +1,38 @@
+.customize-theme-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.customize-selector-container {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.customize-selector {
+  user-select: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s ease-in;
+}
+
+.customize-selector:hover {
+  background-color: rgba(157, 171, 245, 0.2);
+}
+
+.customize-color-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: midnightblue;
+}
+
+.customize-selector-active {
+  background-color: rgba(157, 171, 245, 0.3);
+}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft } from 'react-feather';
 import LinkContainer from './Components/LinkContainer';
 import ChooseTheme from './Components/ChooseTheme';
+import CustomizeTheme from './Components/CustomizeTheme';
 import './App.css';
 
 type BackButtonProps = {
@@ -23,9 +24,9 @@ const SettingsProvider = ({ title }: SettingsProviderProps) => {
   switch (title) {
     case 'Choose Themes':
       return <ChooseTheme />;
-    case 'Recommendations':
-      break;
-    case 'Color Blind Themes':
+    case 'Customize':
+      return <CustomizeTheme />;
+    case 'Accessibility Options':
       break;
     default:
       return null;

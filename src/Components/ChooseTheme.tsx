@@ -47,7 +47,11 @@ export const Themes: Pick<ThemeProps, 'title' | 'colors'>[] = [
   },
   {
     title: 'Night Crawler',
-    colors: ['red', 'orange', 'silver'],
+    colors: ['#b83e3e', 'orange', 'silver'],
+  },
+  {
+    title: 'Lavendar',
+    colors: ['#990b90', '#d989d4', '#ffe8fe'],
   },
 ];
 
