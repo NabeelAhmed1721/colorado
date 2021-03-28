@@ -7,15 +7,15 @@ const MenuItem = (item: any) => {
     const [toggle, setToggle] = useState(false);
 
    const title = item.title;
-    // useEffect(() => {
-    //     console.log(toggle, item.title)
-    // }, [toggle])
-
-
     useEffect(() => {
-        chrome.storage.local.set(
-          {title : toggle}
-    )}, [toggle]);
+        console.log(toggle, item.title)
+    }, [toggle])
+
+    console.log(title);
+    // useEffect(() => {
+    //     chrome.storage.local.set(
+    //       {title : toggle}
+    // )}, [toggle]);
     
 
     const triggerToggle = (e: any) => {
