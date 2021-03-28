@@ -13,7 +13,7 @@ type LinkContainerProps = {
 
 const Links: LinkProps['title'][] = [
   'Choose Themes',
-  'Recommendations',
+  'Customize',
   'Color Blind Themes',
 ];
 

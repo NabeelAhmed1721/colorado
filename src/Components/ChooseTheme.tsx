@@ -10,7 +10,7 @@ const ThemeColor = ({ color }: ThemeColorProps) => (
   <div className="theme-color" style={{ backgroundColor: color }} />
 );
 
-type ThemeProps = {
+export type ThemeProps = {
   title: string;
   colors: [
     ThemeColorProps['color'],
@@ -58,14 +58,20 @@ const ChooseTheme = () => {
 
   useEffect(() => {
     // setSelectedTheme(localStorage.getItem('selectedTheme'));
-    chrome.storage.local.get('selectedTheme', (theme) =>
-      setSelectedTheme(theme.selectedTheme)
+    chrome.storage.local.get('selectedTheme', (data) =>
+      setSelectedTheme(data.selectedTheme.title)
     );
   }, []);
 
   useEffect(() => {
     chrome.storage.local.set(
-      selectedTheme ? { selectedTheme } : { selectedTheme: '' }
+      selectedTheme
+        ? {
+            selectedTheme: Themes.find(
+              (theme) => theme.title === selectedTheme
+            ),
+          }
+        : { selectedTheme: {} }
     );
     // localStorage.setItem('selectedTheme', selectedTheme || '');
   }, [selectedTheme]);
