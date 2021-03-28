@@ -1,0 +1,35 @@
+.pickColor {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 70vw;
+    margin: 0 auto
+}
+
+.html-elements {
+    margin: 20px 20px;
+    
+}
+
+.html-elements p {
+    color: rgb(95, 92, 92);
+}
+
+
+hr{
+    margin-top: 20px;
+}
+.single{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: aquamarine;
+}

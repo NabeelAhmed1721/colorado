@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeft } from 'react-feather';
 import LinkContainer from './Components/LinkContainer';
 import ChooseTheme from './Components/ChooseTheme';
+import PickColor from './Components/PickColor';
 import './App.css';
 
 type BackButtonProps = {
@@ -24,14 +25,14 @@ const SettingsProvider = ({ title }: SettingsProviderProps) => {
     case 'Choose Themes':
       return <ChooseTheme />;
     case 'Recommendations':
-      break;
+      return <PickColor />;
     case 'Color Blind Themes':
       break;
     default:
       return null;
   }
   return null;
-};
+}; 
 
 const App = () => {
   const [activeLink, setActiveLink] = useState<string>('');
