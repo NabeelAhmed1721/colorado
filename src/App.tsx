@@ -3,6 +3,7 @@ import { ArrowLeft } from 'react-feather';
 import LinkContainer from './Components/LinkContainer';
 import ChooseTheme from './Components/ChooseTheme';
 import CustomizeTheme from './Components/CustomizeTheme';
+import Accessibility from './Components/Accessibility';
 import './App.css';
 
 type BackButtonProps = {
@@ -27,7 +28,7 @@ const SettingsProvider = ({ title }: SettingsProviderProps) => {
     case 'Customize':
       return <CustomizeTheme />;
     case 'Accessibility Options':
-      break;
+      return <Accessibility />;
     default:
       return null;
   }

@@ -1,0 +1,15 @@
+.access {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  padding: 10px 24px;
+}
+
+.access:hover {
+  background-color: rgba(157, 171, 245, 0.2);
+}
+
+.access-active {
+  background-color: rgba(157, 171, 245, 0.6);
+}
